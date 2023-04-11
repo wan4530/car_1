@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>계산기</title>
+  <style>
+    #calculator {
+      width: 400px;
+      height: 300px;
+      border: 4px solid black;
+      padding: 100px;
+      text-align: center;
+    }
+    #result {
+      width: 100%;
+      height: 30px;
+      margin-bottom: 10px;
+    }
+    button {
+      width: 80px;
+      height: 50px;
+      margin: 5px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="calculator">
+    <input type="text" id="result" readonly>
+    <button id="one">1</button>
+    <button id="two">2</button>
+    <button id="three">3</button>
+    <button id="add">+</button>
+    <button id="four">4</button>
+    <button id="five">5</button>
+    <button id="six">6</button>
+    <button id="subtract">-</button>
+    <button id="seven">7</button>
+    <button id="eight">8</button>
+    <button id="nine">9</button>
+    <button id="multiply">*</button>
+    <button id="clear">C</button>
+    <button id="zero">0</button>
+    <button id="clear">C</button>
+    <button id="divide">/</button>
+    <p> </p>
+    <button id="equals">=</button>
+  </div>
+
+  <script>
+    var result = document.getElementById("result");
+    var oneButton = document.getElementById("one");
+    var twoButton = document.getElementById("two");
+    var threeButton = document.getElementById("three");
+    var fourButton = document.getElementById("four");
+    var fiveButton = document.getElementById("five");
+    var sixButton = document.getElementById("six");
+    var sevenButton = document.getElementById("seven");
+    var eightButton = document.getElementById("eight");
+    var nineButton = document.getElementById("nine");
+    var zeroButton = document.getElementById("zero");
+    var addButton = document.getElementById("add");
+    var subtractButton = document.getElementById("subtract");
+    var multiplyButton = document.getElementById("multiply");
+    var divideButton = document.getElementById("divide");
+    var clearButton = document.getElementById("clear");
+    var equalsButton = document.getElementById("equals");
+
+    oneButton.addEventListener("click", function() { result.value += "1"; });
+    twoButton.addEventListener("click", function() { result.value += "2"; });
+    threeButton.addEventListener("click", function() { result.value += "3"; });
+    fourButton.addEventListener("click", function() { result.value += "4"; });
+    fiveButton.addEventListener("click", function() { result.value += "5"; });
+    sixButton.addEventListener("click", function() { result.value += "6"; });
+    sevenButton.addEventListener("click", function() { result.value += "7"; });
+    eightButton.addEventListener("click", function() { result.value += "8"; });
+    nineButton.addEventListener("click", function() { result.value += "9"; });
+    zeroButton.addEventListener("click", function() { result.value += "0"; });
+
+    addButton.addEventListener("click", function() { result.value += "+"; });
+    subtractButton.addEventListener("click", function() { result.value += "-"; });
+    multiplyButton.addEventListener("click", function() { result.value += "*"; });
+    divideButton.addEventListener("click", function() { result.value += "/"; });
+
+    clearButton.addEventListener("click", function() { result.value = ""; });
+
+    equalsButton.addEventListener("click", function() {
+      var expression = result.value;
+      var answer = eval(expression);
+      result.value = answer;
+    });
+  </script>
+</body>
+</html>
+
